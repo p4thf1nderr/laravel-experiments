@@ -15,8 +15,8 @@ class ArticleController extends Controller
     }
 
 
-    public function show($id) {
-
+    public function show($id)
+    {
         return $this->item(Article::findOrFail($id), new ArticleTransformer());
     }
 
