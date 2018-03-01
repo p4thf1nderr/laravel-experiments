@@ -8,6 +8,8 @@ class Article extends Model
 {
     protected $table = 'articles';
 
+    protected $fillable = ['title', 'text'];
+
 
     public function images()
     {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Transformer\ArticleTransformer;
-use App\Http\Requests\ArticleRequest;
+use Illuminate\Http\Request;
 
 
 class ArticleController extends Controller
@@ -21,7 +21,7 @@ class ArticleController extends Controller
     }
 
 
-    public function store(ArticleRequest $request)
+    public function store(Request $request)
     {
         $article = Article::create($request->all());
 
