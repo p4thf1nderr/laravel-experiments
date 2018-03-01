@@ -18,14 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
-Route::prefix('articles')->group(function () {
-    Route::get('/', 'ArticleController@index');
+Route::group(['prefix'=>'articles'], function() {
+    Route::post('/', 'ArticleController@store');
 
     Route::get('/{id:[\d]+}',[
         'as' => 'article.show'
         ]);
 
-    Route::post('/', 'ArticleController@store');
-    }
-);
+    Route::get('/', 'ArticleController@index');
+});
